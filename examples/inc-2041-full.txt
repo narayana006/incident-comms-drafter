@@ -1,0 +1,14 @@
+[2026-03-14 14:03] Priya Raman: Paged for checkout-api 5xx. Looking now, calling this SEV2.
+[2026-03-14 14:05] Tomas Lindqvist: I'm seeing it too, 5xx climbing since about 14:00
+[2026-03-14 14:07] Mei Okafor: title: Checkout errors
+components: checkout-api
+impact: about 18% of checkout requests are failing with 503, 12 support tickets so far
+customer impact: some customers are seeing an error when they try to complete a purchase
+workaround: retrying the payment after a minute usually succeeds
+[2026-03-14 14:14] Tomas Lindqvist: Logs are full of connection pool timeouts from orders-db
+[2026-03-14 14:19] Tomas Lindqvist: v2.41.0 went out at 13:58 and changed the pool settings. Should we roll back?
+[2026-03-14 14:24] Priya Raman: cause: the orders-db connection pool was cut from 50 to 5 per pod in v2.41.0
+[2026-03-14 14:26] Priya Raman: status: rolling back checkout-api to v2.40.3, should be fixed soon
+[2026-03-14 14:33] Priya Raman: Rollback is complete, error rate is dropping.
+status: watching error rates after the rollback
+[2026-03-14 14:45] Priya Raman: Error rate back to normal for 10 minutes. Incident resolved.

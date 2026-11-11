@@ -1,0 +1,54 @@
+=== customers: status page update | stage: identified ===
+
+Identified - Checkout errors
+
+We have identified the cause of the issue affecting Checkout and are working on a fix. Some customers are seeing an error when they try to complete a purchase. Workaround: Retrying the payment after a minute usually succeeds. We will provide another update by 14:56 UTC.
+
+The Example Shop team
+
+--- review notes ---
+- stage: inferred from 14:26 UTC "status: rolling back checkout-api to v2.40.3, should be fixed soon"
+DRAFT ONLY - nothing has been sent. A person must review, edit and post this.
+
+=== executives: executive summary | stage: identified ===
+
+[SEV2] Checkout errors - Identified (as of 14:26 UTC)
+
+Status: Identified | Severity: SEV2
+Started: 2026-03-14 14:03 UTC | Duration so far: 23m
+Customer impact: About 18% of checkout requests are failing with 503, 12 support tickets so far.
+Cause: The orders-db connection pool was cut from 50 to 5 per pod in v2.41.0.
+Current action: Rolling back checkout-api to v2.40.3, should be fixed soon.
+Workaround: Retrying the payment after a minute usually succeeds.
+Asks: None at this time.
+Next update: 14:56 UTC
+
+--- review notes ---
+- stage: inferred from 14:26 UTC "status: rolling back checkout-api to v2.40.3, should be fixed soon"
+- FIX: banned phrase "should be fixed soon" (never promise timing)
+DRAFT ONLY - nothing has been sent. A person must review, edit and post this.
+
+=== support: support team brief | stage: identified ===
+
+Support brief: Checkout errors - Identified
+
+Status: Identified | Severity: SEV2
+Started: 2026-03-14 14:03 UTC | Duration so far: 23m
+
+What customers are seeing: Some customers are seeing an error when they try to complete a purchase.
+Workaround: Retrying the payment after a minute usually succeeds.
+
+What you can tell customers (matches the status page draft):
+  We have identified the cause of the issue affecting Checkout and are working on a fix. Some customers are seeing an error when they try to complete a purchase. Workaround: Retrying the payment after a minute usually succeeds. We will provide another update by 14:56 UTC.
+
+  The Example Shop team
+
+Please do not:
+  - promise a time by which this will be fixed
+  - share details of the cause beyond the wording above
+
+Next update: 14:56 UTC
+
+--- review notes ---
+- stage: inferred from 14:26 UTC "status: rolling back checkout-api to v2.40.3, should be fixed soon"
+DRAFT ONLY - nothing has been sent. A person must review, edit and post this.

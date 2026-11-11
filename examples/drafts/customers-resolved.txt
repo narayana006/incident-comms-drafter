@@ -1,0 +1,13 @@
+=== customers: status page update | stage: resolved ===
+
+Resolved - Checkout errors
+
+The issue affecting Checkout has been resolved. The issue lasted from 14:03 to 14:45 UTC. We apologize for the disruption.
+
+The Example Shop team
+
+--- review notes ---
+- stage: inferred from 14:45 UTC "Error rate back to normal for 10 minutes. Incident resolved."
+- start time is the first channel message (14:03 UTC); correct it if the impact began earlier
+- replaced "apologise" with "apologize" (US spelling)
+DRAFT ONLY - nothing has been sent. A person must review, edit and post this.

@@ -1,0 +1,33 @@
+# House style for Example Shop incident communications.
+
+product = "Example Shop"
+update_interval_minutes = 30      # promised gap between updates
+max_length = 600                  # characters allowed in a status page update
+apology = "We apologise for the disruption."
+sign_off = "The Example Shop team"
+
+# Internal names that must never appear in a customer-facing draft.
+internal_terms = ["orders-db", "checkout-api", "v2.41.0"]
+
+# Internal component name -> the name customers know.
+[components]
+checkout-api = "Checkout"
+search-api = "Search"
+
+# A phrase with "replace" is swapped automatically; without it the draft is flagged.
+[[banned]]
+phrase = "outage"
+replace = "disruption"
+
+[[banned]]
+phrase = "apologise"
+replace = "apologize"
+reason = "US spelling"
+
+[[banned]]
+phrase = "should be fixed soon"
+reason = "never promise timing"
+
+[[banned]]
+phrase = "unfortunately"
+audiences = ["customers"]

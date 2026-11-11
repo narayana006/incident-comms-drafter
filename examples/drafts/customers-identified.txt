@@ -1,0 +1,11 @@
+=== customers: status page update | stage: identified ===
+
+Identified - Checkout errors
+
+We have identified the cause of the issue affecting Checkout and are working on a fix. Some customers are seeing an error when they try to complete a purchase. Workaround: Retrying the payment after a minute usually succeeds. We will provide another update by 14:56 UTC.
+
+The Example Shop team
+
+--- review notes ---
+- stage: inferred from 14:26 UTC "status: rolling back checkout-api to v2.40.3, should be fixed soon"
+DRAFT ONLY - nothing has been sent. A person must review, edit and post this.
