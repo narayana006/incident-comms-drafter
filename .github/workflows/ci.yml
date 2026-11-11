@@ -1,0 +1,24 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+      - run: pip install ".[dev]"
+      - run: pytest -q
+      - name: Smoke-test the CLI on the example channel
+        run: |
+          incident-comms-drafter draft --channel examples/inc-2041.json \
+            --style examples/house-style.toml --audience customers > draft.txt
+          diff draft.txt examples/drafts/customers-identified.txt
